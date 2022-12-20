@@ -85,7 +85,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_NewOrdersButton_id"
+                        android:id="@+id/Get_Request_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -133,7 +133,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_ConfirmedOrdersButton_id"
+                        android:id="@+id/Post_Request_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -197,7 +197,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/LinearLayout3">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_PreparedOrdersButton_id"
+                        android:id="@+id/Path_Parameters_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -244,7 +244,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_ShippedOrdersButton_id"
+                        android:id="@+id/Body_Parameters_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -308,7 +308,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/LinearLayout2">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_CancelledOrdersButton_id"
+                        android:id="@+id/Query_Map_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -356,7 +356,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_SearchOrdersButton_id"
+                        android:id="@+id/Query_Parameters_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -419,7 +419,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/LinearLayout4">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_CancelledOrdersButton2_id"
+                        android:id="@+id/Dynamic_Headers_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
@@ -467,7 +467,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OrdersFragment_SearchOrdersButton3_id"
+                        android:id="@+id/Static_Headers_Card_Button_Id"
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:layout_rowWeight="1"
