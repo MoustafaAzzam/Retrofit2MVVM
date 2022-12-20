@@ -7,39 +7,41 @@ interface RetrofitApi {
 
     //Simple Get Request
     @GET("/posts/1")
-    suspend fun getPost ():Response<Post>
-    //Adding Path Parameters
-    @GET("/posts/{postNumber}")
-    suspend fun getPost2 (@Path("postNumber")number : Int):Response<Post>
-    //Adding Query Parameters
-    @GET("/posts")
-    suspend fun getUserPosts(@Query("userId")User:Int) : Response<List<Post>>
+    suspend fun getPosts ():Response<Post>
 
-    //Adding Query Parameters
+    //Get Request Adding Path Parameters
+    @GET("/posts/{postNumber}")
+    suspend fun getPostsPathParam (@Path("postNumber")number : Int):Response<Post>
+
+    //Get Request Adding Query Parameters
     @GET("/posts")
-    suspend fun getUserPostsSortedOrdered(
+    suspend fun getPostsQueryParam(@Query("userId")User:Int) : Response<List<Post>>
+
+    //Get Request Adding Query Parameters
+    @GET("/posts")
+    suspend fun getPostsQueryParam2(
         @Query("userId")User:Int,
         @Query("_sort")sort:String,
         @Query("_order")order:String
     ) : Response<List<Post>>
 
-    //Adding QueryMap
+    //Get Request Adding QueryMap
     @GET("/posts")
-    suspend fun getUsersPostsQueryMap(
+    suspend fun getPostsQueryMap(
         @Query("userId")User: Int,
         @QueryMap options: Map<String,String>
     ):Response<List<Post>>
 
-    //Post Request Data
+    //Simple Post Request Adding Body Param
     @POST("posts")
-    suspend fun pushPost(
+    suspend fun pushPostBodyParam(
         @Body post: Post
     ):Response<Post>
 
-    // Post With Fields And URL Encode
+    // Post Request  With Fields And URL Encode
     @FormUrlEncoded
     @POST("posts")
-    suspend fun pushPost2(
+    suspend fun pushPostFieldsParam(
         @Field("userId")userId:Int,
         @Field("id")id:Int,
         @Field("title")title:String,
@@ -47,14 +49,16 @@ interface RetrofitApi {
 
     ):Response<Post>
 
-    //Add Static Header
+    //Post Request Add Static Header
     @FormUrlEncoded
-    @Headers("AuthKey:123456789")
+    @Headers("AuthKey:123456789") // We Type theKey:theValue in the () as Example
     @POST("posts")
-    suspend fun PostWithStaticHeader():Response<Post>
+    suspend fun pushPostWithStaticHeader():Response<Post>
 
-    //Add Dynamic Headers
+    //Post Request Add Dynamic Headers
     @FormUrlEncoded
     @POST
-    suspend fun PostDynamicHeaders(@Header("Authorization-Key")AuthKey:String):Response<Post>
+    suspend fun pushPostDynamicHeaders(@Header("Authorization-Key")AuthKey:String):Response<Post>
+
+
 }
