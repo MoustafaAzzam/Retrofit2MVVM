@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Retrofit2MVVM</string>
+    <string name="Retrofit_Tutorial">Retrofit Tutorial</string>
+    <string name="static_headers">Static Headers</string>
+    <string name="Dynamic_Headers">Dynamic Headers</string>
+    <string name="Query_Map">Query Map</string>
+    <string name="Query_Parameter">Query\nParameter</string>
+    <string name="Path_Parameters">Path Parameters</string>
+    <string name="Post">Post Request</string>
+    <string name="Get_Request">Get Request</string>
+    <string name="Body_Parameters">Body Parameters</string>
+</resources>

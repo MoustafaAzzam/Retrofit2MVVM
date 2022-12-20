@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Retrofit_Tutorial">Retrofit Tutorial</string>
+    <string name="static_headers">Static Headers</string>
+    <string name="Dynamic_Headers">Dynamic Headers</string>
+    <string name="Query_Map">Query Map</string>
+    <string name="Query_Parameter">Query Parameter</string>
+    <string name="Path_Parameters">Path Parameters</string>
+    <string name="Post">Post</string>
+    <string name="Get_Request">Get Request</string>
+    <string name="Body_Parameters">Body Parameters</string>
+</resources>
