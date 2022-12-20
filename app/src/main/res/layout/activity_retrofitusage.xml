@@ -21,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,34 +100,21 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
-                                android:textStyle="bold"
-                                android:gravity="center_horizontal"
-                                android:text="@string/Get_Request"
-                                android:textAlignment="center"
-                                android:textColor="@color/white"
-                                android:textSize="10pt" />
-                        </LinearLayout>
+                            android:textStyle="bold"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_horizontal"
+                            android:text="@string/Get_Request"
+                            android:drawableTop="@drawable/ic_one"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="10pt" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -148,34 +135,24 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
 
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
+                                android:drawableTop="@drawable/ic_one"
+                                android:drawablePadding="10dp"
                                 android:text="@string/Post"
                                 android:textStyle="bold"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
@@ -211,34 +188,22 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/Path_Parameters"
                                 android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:drawablePadding="10dp"
+                                android:drawableTop="@drawable/ic_one"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
@@ -260,34 +225,23 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:textStyle="bold"
+                                android:drawableTop="@drawable/ic_one"
+                                android:drawablePadding="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/Body_Parameters"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
@@ -323,34 +277,22 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/Query_Map"
                                 android:textStyle="bold"
+                                android:drawablePadding="10dp"
+                                android:drawableTop="@drawable/ic_one"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
 
 
                     </androidx.cardview.widget.CardView>
@@ -372,34 +314,22 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/Query_Parameter"
+                                android:drawableTop="@drawable/ic_one"
+                                android:drawablePadding="10dp"
                                 android:textStyle="bold"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
@@ -434,34 +364,22 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/Dynamic_Headers"
+                                android:drawablePadding="10dp"
+                                android:drawableTop="@drawable/ic_one"
                                 android:textStyle="bold"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
@@ -482,34 +400,22 @@
                         app:layout_constraintTop_toTopOf="parent">
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:orientation="vertical"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                app:srcCompat="@drawable/ic_one" />
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center_horizontal"
                                 android:text="@string/static_headers"
+                                android:drawableTop="@drawable/ic_one"
+                                android:drawablePadding="10dp"
                                 android:textStyle="bold"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10pt" />
-                        </LinearLayout>
+
 
 
                     </androidx.cardview.widget.CardView>
