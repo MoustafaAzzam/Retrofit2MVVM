@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.retrofit2mvvm.RetrofitUsageViewModel
 import com.example.retrofit2mvvm.RetrofitUsageViewModelFactory
@@ -14,93 +13,93 @@ import com.example.retrofit2mvvm.repository.model.Post
 
 class RetrofitUsageActivity : AppCompatActivity() {
 
-    private lateinit var  RetrofitusageBinding : ActivityRetrofitusageBinding
-    private lateinit var RetrofitUsageActivityViewModel : RetrofitUsageViewModel
+    private lateinit var  retrofitUsageBinding : ActivityRetrofitusageBinding
+    private lateinit var retrofitUsageActivityViewModel : RetrofitUsageViewModel
     private lateinit var repository: Repository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Define View Binding
-        RetrofitusageBinding = ActivityRetrofitusageBinding.inflate(layoutInflater)
-        setContentView(RetrofitusageBinding.root)
+        retrofitUsageBinding = ActivityRetrofitusageBinding.inflate(layoutInflater)
+        setContentView(retrofitUsageBinding.root)
         // Define Repository and ViewModel and ViewModel Factory
         repository = Repository()
-        val RetrofitUsageViewModelFactory = RetrofitUsageViewModelFactory(repository)
-        RetrofitUsageActivityViewModel = ViewModelProvider(this,RetrofitUsageViewModelFactory).get(RetrofitUsageViewModel::class.java)
+        val retrofitUsageViewModelFactory = RetrofitUsageViewModelFactory(repository)
+        retrofitUsageActivityViewModel = ViewModelProvider(this,retrofitUsageViewModelFactory)[RetrofitUsageViewModel::class.java]
 
-        val MyPost =Post("Mostafa","1993","TitleAzzam","BodyAzam")
+        val myPost =Post("Mostafa","1993","TitleAzzam","BodyAzam")
 
-        RetrofitusageBinding.GetRequestCardButtonId.setOnClickListener {
-            RetrofitUsageActivityViewModel.getPosts()
-            RetrofitUsageActivityViewModel.getPostsLiveData.observe(this, Observer {
+        retrofitUsageBinding.GetRequestCardButtonId.setOnClickListener {
+            retrofitUsageActivityViewModel.getPosts()
+            retrofitUsageActivityViewModel.getPostsLiveData.observe(this){
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.getPostsLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.getPostsLiveData.removeObservers(this)
 
         }
 
-        RetrofitusageBinding.PostRequestCardButtonId.setOnClickListener {
-            RetrofitUsageActivityViewModel.pushPostFieldsParam(5,10,"Mostafa Azzam Title","Mostafa Azzam Body")
-            RetrofitUsageActivityViewModel.pushPostFieldsParamLiveData.observe(this, Observer {
+        retrofitUsageBinding.PostRequestCardButtonId.setOnClickListener {
+            retrofitUsageActivityViewModel.pushPostFieldsParam(5,10,"Mostafa Azzam Title","Mostafa Azzam Body")
+            retrofitUsageActivityViewModel.pushPostFieldsParamLiveData.observe(this) {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.pushPostFieldsParamLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.pushPostFieldsParamLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.PathParametersCardButtonId.setOnClickListener {
-            RetrofitUsageActivityViewModel.getUserPostsQueryParam(5)
-            RetrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.observe(this, Observer {
+        retrofitUsageBinding.PathParametersCardButtonId.setOnClickListener {
+            retrofitUsageActivityViewModel.getUserPostsQueryParam(5)
+            retrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.observe(this) {
                 Toast.makeText(this,it.body()?.get(0)?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.BodyParametersCardButtonId.setOnClickListener {
-            RetrofitUsageActivityViewModel.pushPostBodyParam(MyPost)
-            RetrofitUsageActivityViewModel.pushPostBodyParamLiveData.observe(this, Observer {
+        retrofitUsageBinding.BodyParametersCardButtonId.setOnClickListener {
+            retrofitUsageActivityViewModel.pushPostBodyParam(myPost)
+            retrofitUsageActivityViewModel.pushPostBodyParamLiveData.observe(this) {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.pushPostBodyParamLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.pushPostBodyParamLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.QueryMapCardButtonId.setOnClickListener {
-            val Map:HashMap<String,String> = HashMap()
-            Map.put("_sort","id")
-            RetrofitUsageActivityViewModel.getUserPostsQueryMap(5,Map)
-            RetrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData .observe(this, Observer {
+        retrofitUsageBinding.QueryMapCardButtonId.setOnClickListener {
+            val map:HashMap<String,String> = HashMap()
+            map["_sort"] = "id"
+            retrofitUsageActivityViewModel.getUserPostsQueryMap(5,map)
+            retrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData .observe(this) {
                 Toast.makeText(this,it.body()?.get(0).toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.QueryParametersCardButtonId.setOnClickListener {
-            RetrofitUsageActivityViewModel.getUserPostsQueryParam2(10,"_sort","id")
-            RetrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.observe(this, Observer {
+        retrofitUsageBinding.QueryParametersCardButtonId.setOnClickListener {
+            retrofitUsageActivityViewModel.getUserPostsQueryParam2(10,"_sort","id")
+            retrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.observe(this) {
                 Toast.makeText(this,it.body()?.get(0).toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.DynamicHeadersCardButtonId.setOnClickListener {
+        retrofitUsageBinding.DynamicHeadersCardButtonId.setOnClickListener {
             //RetrofitUsageActivityViewModel.pushPostDynamicHeader("123456789") We need Working Api and Change URL To Test
-            RetrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.observe(this, Observer {
+            retrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.observe(this) {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.StaticHeadersCardButtonId.setOnClickListener {
+        retrofitUsageBinding.StaticHeadersCardButtonId.setOnClickListener {
            // RetrofitUsageActivityViewModel.pushPostStaticHeader() We need Working Api and Change URL To Test
-            RetrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.observe(this, Observer {
+            retrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.observe(this)  {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
-            })
-            RetrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.removeObservers(this)
+            }
+            retrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.removeObservers(this)
         }
 
-        RetrofitusageBinding.HeaderTextTextviewId.setOnClickListener {
+        retrofitUsageBinding.HeaderTextTextviewId.setOnClickListener {
 
-            val RecActivityIntent = Intent(this, RecyclerViewActivity::class.java)
+            val recActivityIntent = Intent(this, RecyclerViewActivity::class.java)
 
-            startActivity(RecActivityIntent)
+            startActivity(recActivityIntent)
 
         }
 
