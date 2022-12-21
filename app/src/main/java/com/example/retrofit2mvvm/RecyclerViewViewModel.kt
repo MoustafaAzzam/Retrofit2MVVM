@@ -5,9 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.retrofit2mvvm.repository.Repository
 import com.example.retrofit2mvvm.repository.model.Post
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import retrofit2.Response
 
 class RecyclerViewViewModel(private val repository: Repository) : ViewModel() {
@@ -15,6 +13,7 @@ class RecyclerViewViewModel(private val repository: Repository) : ViewModel() {
     var UersPosts : MutableLiveData<Response<List<Post>>> = MutableLiveData()
 
     fun userPostsAll(userId:Int){
+
 
         viewModelScope.launch(Dispatchers.IO) {
             val response : Response<List<Post>> = repository.getUserPostsQueryParam(userId)
