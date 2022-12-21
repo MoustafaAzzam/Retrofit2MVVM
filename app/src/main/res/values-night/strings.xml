@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Retrofit_Tutorial">Retrofit Tutorial</string>
+    <string name="app_header">Retrofit2MVVM-RecyclerView</string>
     <string name="static_headers">Static Headers</string>
     <string name="Dynamic_Headers">Dynamic Headers</string>
     <string name="Query_Map">Query Map</string>

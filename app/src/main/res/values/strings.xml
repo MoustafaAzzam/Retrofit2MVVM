@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Retrofit2MVVM</string>
+    <string name="app_header">Retrofit2MVVM-RecyclerView</string>
     <string name="Retrofit_Tutorial">Retrofit Tutorial</string>
     <string name="static_headers">Static Headers</string>
     <string name="Dynamic_Headers">Dynamic Headers</string>
