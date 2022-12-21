@@ -13,29 +13,28 @@ import com.example.retrofit2mvvm.repository.Repository
 
 class RecyclerViewActivity : AppCompatActivity() {
 
-    private lateinit var ActivityRecyclerBinding : ActivityRecyclerViewBinding
+    private lateinit var activityRecyclerBinding : ActivityRecyclerViewBinding
     private val recyclerViewAdapter by lazy { PostsRecyclerViewApadpter() }
     private lateinit var repository: Repository
     private lateinit var recyclerViewViewModel: RecyclerViewViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ActivityRecyclerBinding = ActivityRecyclerViewBinding.inflate(layoutInflater)
-        setContentView(ActivityRecyclerBinding.root)
+        activityRecyclerBinding = ActivityRecyclerViewBinding.inflate(layoutInflater)
+        setContentView(activityRecyclerBinding.root)
 
         repository = Repository()
         val recyclerViewViewModelFactory = RecyclerViewViewModelFactory(repository)
-        recyclerViewViewModel = ViewModelProvider(this,recyclerViewViewModelFactory).get(
-            RecyclerViewViewModel::class.java)
+        recyclerViewViewModel = ViewModelProvider(this,recyclerViewViewModelFactory).get(RecyclerViewViewModel::class.java)
 
         setUpRecView()
 
 
 
-        ActivityRecyclerBinding.GetPostsButtonId.setOnClickListener {
+        activityRecyclerBinding.GetPostsButtonId.setOnClickListener {
 
-            recyclerViewViewModel.userPostsAll(Integer.parseInt(ActivityRecyclerBinding.EditTestUserId.text.toString()))
+            recyclerViewViewModel.userPostsAll(Integer.parseInt(activityRecyclerBinding.EditTestUserId.text.toString()))
 
-            recyclerViewViewModel.UersPosts.observe(this, Observer { resp->
+            recyclerViewViewModel.UersPosts.observe(this, Observer{ resp->
 
                 if (resp.isSuccessful){
                     resp.body()?.let { recyclerViewAdapter.SetupData(it) }
@@ -52,8 +51,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     private fun setUpRecView(){
 
-        ActivityRecyclerBinding.RecyclerViewId.adapter = recyclerViewAdapter
-        ActivityRecyclerBinding.RecyclerViewId.layoutManager= LinearLayoutManager(this)
+        activityRecyclerBinding.RecyclerViewId.adapter = recyclerViewAdapter
+        activityRecyclerBinding.RecyclerViewId.layoutManager= LinearLayoutManager(this)
 
     }
 }
