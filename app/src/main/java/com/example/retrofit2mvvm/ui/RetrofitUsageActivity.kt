@@ -31,69 +31,69 @@ class RetrofitUsageActivity : AppCompatActivity() {
 
         RetrofitusageBinding.GetRequestCardButtonId.setOnClickListener {
             RetrofitUsageActivityViewModel.getPosts()
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.getPostsLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.getPostsLiveData.removeObservers(this)
 
         }
 
         RetrofitusageBinding.PostRequestCardButtonId.setOnClickListener {
             RetrofitUsageActivityViewModel.pushPostFieldsParam(5,10,"Mostafa Azzam Title","Mostafa Azzam Body")
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.pushPostFieldsParamLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.pushPostFieldsParamLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.PathParametersCardButtonId.setOnClickListener {
             RetrofitUsageActivityViewModel.getUserPostsQueryParam(5)
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
-                Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
+            RetrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.observe(this, Observer {
+                Toast.makeText(this,it.body()?.get(0)?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.getUserPostsQueryParamListLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.BodyParametersCardButtonId.setOnClickListener {
             RetrofitUsageActivityViewModel.pushPostBodyParam(MyPost)
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.pushPostBodyParamLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.pushPostBodyParamLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.QueryMapCardButtonId.setOnClickListener {
             val Map:HashMap<String,String> = HashMap()
             Map.put("_sort","id")
             RetrofitUsageActivityViewModel.getUserPostsQueryMap(5,Map)
-            RetrofitUsageActivityViewModel.PostListReuestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData .observe(this, Observer {
                 Toast.makeText(this,it.body()?.get(0).toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.getUserPostsQueryMapListLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.QueryParametersCardButtonId.setOnClickListener {
             RetrofitUsageActivityViewModel.getUserPostsQueryParam2(10,"_sort","id")
-            RetrofitUsageActivityViewModel.PostListReuestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.get(0).toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.getUserPostsQueryParam2ListLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.DynamicHeadersCardButtonId.setOnClickListener {
             //RetrofitUsageActivityViewModel.pushPostDynamicHeader("123456789") We need Working Api and Change URL To Test
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.pushPostDynamicHeaderLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.StaticHeadersCardButtonId.setOnClickListener {
            // RetrofitUsageActivityViewModel.pushPostStaticHeader() We need Working Api and Change URL To Test
-            RetrofitUsageActivityViewModel.PostRequestLiveData.observe(this, Observer {
+            RetrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.observe(this, Observer {
                 Toast.makeText(this,it.body()?.PostTitle.toString(),Toast.LENGTH_LONG).show()
             })
-            RetrofitUsageActivityViewModel.PostRequestLiveData.removeObservers(this)
+            RetrofitUsageActivityViewModel.pushPostStaticHeaderLiveData.removeObservers(this)
         }
 
         RetrofitusageBinding.HeaderTextTextviewId.setOnClickListener {

@@ -11,22 +11,29 @@ import retrofit2.Response
 
 class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
 
-    var PostRequestLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
-    var PostListReuestLiveData : MutableLiveData<Response<List<Post>>> = MutableLiveData()
+    var getPostsLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var getUserPostsParamLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var pushPostBodyParamLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var pushPostFieldsParamLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var pushPostStaticHeaderLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var pushPostDynamicHeaderLiveData : MutableLiveData<Response<Post>> = MutableLiveData()
+    var getUserPostsQueryParamListLiveData : MutableLiveData<Response<List<Post>>> = MutableLiveData()
+    var getUserPostsQueryParam2ListLiveData : MutableLiveData<Response<List<Post>>> = MutableLiveData()
+    var getUserPostsQueryMapListLiveData : MutableLiveData<Response<List<Post>>> = MutableLiveData()
 
 
     fun getPosts(){
 
         GlobalScope.launch(Dispatchers.IO) {
             //val response : Response<Post> = repository.getPosts()
-            PostRequestLiveData.postValue(repository.getPosts())
+            getPostsLiveData.postValue(repository.getPosts())
         }
     }
 
     fun getUserPostsParam(postNumber:Int){
         GlobalScope.launch(Dispatchers.IO) {
             val response : Response<Post> = repository.getUserPostsParam(postNumber)
-            PostRequestLiveData.postValue(response)
+            getUserPostsParamLiveData.postValue(response)
         }
     }
 
@@ -35,14 +42,14 @@ class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
         GlobalScope.launch(Dispatchers.IO) {
 
             val response : Response<List<Post>> = repository.getUserPostsQueryParam(userId)
-            PostListReuestLiveData.postValue(response)
+            getUserPostsQueryParamListLiveData.postValue(response)
         }
     }
 
     fun getUserPostsQueryParam2(userId:Int , Sort:String,Order:String){
         GlobalScope.launch(Dispatchers.IO) {
             val response  : Response<List<Post>> = repository.getUserPostsQueryParam2(userId,Sort,Order)
-            PostListReuestLiveData.postValue(response)
+            getUserPostsQueryParam2ListLiveData.postValue(response)
         }
     }
 
@@ -50,14 +57,14 @@ class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
         GlobalScope.launch(Dispatchers.IO) {
 
             val response : Response<List<Post>> = repository.getUserPostsQueryMap(userId,options)
-            PostListReuestLiveData.postValue(response)
+            getUserPostsQueryMapListLiveData.postValue(response)
         }
     }
 
     fun pushPostBodyParam(post:Post){
         GlobalScope.launch(Dispatchers.IO) {
             val response: Response<Post> = repository.pushPostBodyParam(post)
-            PostRequestLiveData.postValue(response)
+            pushPostBodyParamLiveData.postValue(response)
 
         }
     }
@@ -66,7 +73,7 @@ class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
 
         GlobalScope.launch(Dispatchers.IO) {
             val response : Response<Post> = repository.pushPostFieldsParam(userId ,id , title , body)
-            PostRequestLiveData.postValue(response)
+            pushPostFieldsParamLiveData.postValue(response)
         }
     }
 
@@ -74,7 +81,7 @@ class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
 
         GlobalScope.launch(Dispatchers.IO) {
             val response : Response<Post> = repository.pushPostStaticHeader()
-            PostRequestLiveData.postValue(response)
+            pushPostStaticHeaderLiveData.postValue(response)
         }
     }
 
@@ -83,7 +90,7 @@ class RetrofitUsageViewModel(private val repository: Repository) : ViewModel() {
 
         GlobalScope.launch(Dispatchers.IO) {
             val response : Response<Post> = repository.pushPostDynamicHeader(Key)
-            PostRequestLiveData.postValue(response)
+            pushPostDynamicHeaderLiveData.postValue(response)
         }
     }
 
