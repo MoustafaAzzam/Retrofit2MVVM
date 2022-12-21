@@ -3,12 +3,9 @@ package com.example.retrofit2mvvm.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.retrofit2mvvm.R
-import com.example.retrofit2mvvm.RecyclerViewActivity
 import com.example.retrofit2mvvm.RetrofitUsageViewModel
 import com.example.retrofit2mvvm.RetrofitUsageViewModelFactory
 import com.example.retrofit2mvvm.databinding.ActivityRetrofitusageBinding
@@ -101,7 +98,7 @@ class RetrofitUsageActivity : AppCompatActivity() {
 
         RetrofitusageBinding.HeaderTextTextviewId.setOnClickListener {
 
-            val RecActivityIntent = Intent(this,RecyclerViewActivity::class.java)
+            val RecActivityIntent = Intent(this, RecyclerViewActivity::class.java)
 
             startActivity(RecActivityIntent)
 

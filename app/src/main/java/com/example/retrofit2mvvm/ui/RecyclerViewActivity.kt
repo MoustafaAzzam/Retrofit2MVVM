@@ -1,10 +1,12 @@
-package com.example.retrofit2mvvm
+package com.example.retrofit2mvvm.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrofit2mvvm.RecyclerViewViewModel
+import com.example.retrofit2mvvm.RecyclerViewViewModelFactory
 import com.example.retrofit2mvvm.adapter.PostsRecyclerViewApadpter
 import com.example.retrofit2mvvm.databinding.ActivityRecyclerViewBinding
 import com.example.retrofit2mvvm.repository.Repository
@@ -22,7 +24,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         repository = Repository()
         val recyclerViewViewModelFactory = RecyclerViewViewModelFactory(repository)
-        recyclerViewViewModel = ViewModelProvider(this,recyclerViewViewModelFactory).get(RecyclerViewViewModel::class.java)
+        recyclerViewViewModel = ViewModelProvider(this,recyclerViewViewModelFactory).get(
+            RecyclerViewViewModel::class.java)
 
         setUpRecView()
 
@@ -44,17 +47,6 @@ class RecyclerViewActivity : AppCompatActivity() {
             })
 
         }
-
-        /*
-        * Observer {resp->
-                if (resp.isSuccessful){
-                    resp.body()?.let { recyclerViewAdapter.SetupData() }
-                }else{
-
-                }
-            })
-        * */
-
 
     }
 
